@@ -1,0 +1,16 @@
+#bandLogo {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+}
+
+#discordBtn {
+    background-color: #4b5869;
+    border-radius: 2em;
+}
+
+#discordBtn img {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+}

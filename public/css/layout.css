@@ -1,0 +1,19 @@
+#leftMenu {
+    -webkit-box-shadow: 10px 0px 10px -5px rgba(0, 0, 0, 0.5); 
+    box-shadow: 10px 0px 10px -5px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    height: 100vh;
+}
+
+#iconList a {
+    color: #E60606;
+}
+
+main {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
+    height: -webkit-fill-available;
+    max-height: 100vh;
+    overflow: auto;
+}

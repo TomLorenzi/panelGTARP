@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
+{% endblock %}
+
+{% block body %}
+<div id="leftMenu" class="d-flex flex-column flex-shrink-0 bg-dark" style="width: 4.5rem;">
+    <img src="{{ asset('images/sLogo.png') }}" />
+    <ul id="iconList" class="nav nav-flush flex-column mb-auto text-center">
+        <li class="nav-item">
+            <a href="{{ path('user.homepage') }}" class="nav-link py-3 border-bottom border-top" title="Accueil" data-bs-toggle="tooltip" data-bs-placement="right">
+                <i class="fas fa-home"></i>
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('user.quizz') }}" class="nav-link py-3 border-bottom" title="Formulaire" data-bs-toggle="tooltip" data-bs-placement="right">
+                <i class="fas fa-file-alt"></i>
+            </a>
+        </li>
+        {% if is_granted('ROLE_FORM') %}
+        <li>
+            <a href="{{ path('user.folder.new') }}" class="nav-link py-3 border-bottom" title="Dossier" data-bs-toggle="tooltip" data-bs-placement="right">
+                <i class="fas fa-folder-open"></i>
+            </a>
+        </li>
+        {% endif %}
+        <li>
+            <a href="{{ path('user.rules') }}" class="nav-link py-3 border-bottom" title="Règlement" data-bs-toggle="tooltip" data-bs-placement="right">
+                <i class="fas fa-gavel"></i>
+            </a>
+        </li>
+        {% if is_granted('ROLE_DOUANIER') %}
+        <li>
+            <a href="{{ path('douane.folder.list') }}" class="nav-link py-3 border-bottom" title="Douane" data-bs-toggle="tooltip" data-bs-placement="right">
+                <i class="fas fa-passport"></i>
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+    <div class="border-top">
+        <a href="{{ path('user.profil') }}" class="active d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none">
+            <img src="{{ user.avatar }}" alt="avatar" width="24" height="24" class="rounded-circle">
+        </a>
+    </div>
+</div>
+{% endblock %}

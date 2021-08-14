@@ -1,0 +1,29 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Formulaire | SinCity{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+<main>
+    {{ parent() }}
+    <div class="container mt-5">
+        <div class="card bg-dark text-white">
+            <h2 class="card-header">Formulaire</h2>
+            <div class="card-body">
+                <p class="card-text">Ce formulaire est requis pour continuer la procédure afin d'accéder au serveur</p>
+                <p class="card-text">Avant de réaliser ce formulaire veuillez lire le règlement du serveur : ici</p>
+                <p class="card-text">Chaque question peut avoir une bonne réponse <b>mais peut en avoir plusieurs !</b><br>
+                Un certain score est requis pour valider ce formulaire mais vous avez une marge d'erreur.</p>
+                <a href="{{ path('user.quizz.new') }}" class="btn btn-primary">Commencer</a>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

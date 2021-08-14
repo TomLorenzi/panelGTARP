@@ -1,0 +1,15 @@
+#stepper {
+    max-height: 50%;
+}
+
+.active .bs-stepper-circle {
+    background-color: #E60606 !important;
+}
+
+.bs-stepper .line {
+    background-color: #FFF !important;
+}
+
+.bs-stepper .step-trigger {
+    color: #FFF !important;
+}

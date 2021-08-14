@@ -1,0 +1,38 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}List des dossiers | SinCity{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="/css/bootstrap-datatable.min.css">
+{% endblock %}
+
+{% block body %}
+<main>
+    {{ parent() }}
+    <div class="container mt-5 text-white">
+        <table id="formList" class="table d-table" style="max-width:100%!important;color:white;">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">
+                        Date
+                    </th>
+                    <th scope="col">
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</main>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="/js/jquery-datatable.min.js"></script>
+    <script src="/js/datatable-bootstrap.min.js"></script>
+    <script src="/js/listForm.js"></script>
+{% endblock %}

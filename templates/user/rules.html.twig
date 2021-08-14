@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Règlement | SinCity{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/user/profil.css') }}">
+{% endblock %}
+
+{% block body %}
+<main>
+    {{ parent() }}
+    <div class="container text-white text-center mt-5">
+        <h1>Règlement SinCity V3</h1>
+    </div>
+</main>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

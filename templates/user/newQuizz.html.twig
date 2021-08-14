@@ -1,0 +1,45 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Formulaire | SinCity{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/user/newQuizz.css') }}">
+{% endblock %}
+
+{% block body %}
+<main>
+    {{ parent() }}
+    <input id="quizzId" value="{{ quizz.id }}" type="hidden" />
+    <div class="container mb-5">
+        {% set i = 1 %}
+        {% for question in quizz.questions %}
+            <div id="{{ question.id }}" class="card bg-dark text-white mt-5 question">
+                <h2 class="card-header">Question N°{{ i }}</h2>
+                {% set i = i + 1 %}
+                <div class="card-body">
+                    <p class="card-text">{{ question.text }}</p>
+                    <div class="d-flex">
+                        {% for answer in question.answers %}
+                            <div class="col-6">
+                                <div class="form-check">
+                                    <input id="{{ answer.id }}" class="form-check-input answer" type="checkbox" />
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        {{ answer.text }}
+                                    </label>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <button id="validQuizz" class="btn btn-success mt-3 pb-1 w-100" type="button">Valider le formulaire</button>
+    </div>
+</main>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/newQuizz.js') }}"></script>
+{% endblock %}

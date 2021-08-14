@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Profil | SinCity{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/user/profil.css') }}">
+{% endblock %}
+
+{% block body %}
+<main>
+    {{ parent() }}
+    <div class="container mt-5">
+        <div class="card bg-dark text-white">
+            <h2 class="card-header">Profile</h2>
+            <div class="card-body">
+                <p class="card-text"><b>Avatar :</b> <img src="{{ user.avatar }}"></img></p>
+                <p class="card-text"><b>Pseudo :</b> {{ user.realUserName }}</p>
+                <p class="card-text"><b>Email :</b> {{ user.email }}</p>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

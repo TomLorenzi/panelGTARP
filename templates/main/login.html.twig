@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion | SinCity{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="app d-flex vh-100 flex-row align-items-center">
+    <div class="container">
+        <div class="justify-content-center row">
+            <div class="col-md-4">
+                <div id="loginCard" class="card">
+                    <div class="card-body">
+                        <h4 class="card-title text-center mb-4 mt-1">Connexion</h4>
+                            <img id="bandLogo" src="{{ asset('images/bandLogo.png') }}" />
+                        <hr>
+                        <span class="text-success text-center d-none"></span>
+                        <div id="discordBtn" class="form-group">
+                            <a href="{{ path('login.discord') }}">
+                                <img src="https://discord.com/assets/2f71ab5383293f63985ac8d5c632b3d4.png" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

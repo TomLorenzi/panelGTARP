@@ -1,0 +1,79 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Formulaire | SinCity{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {#<link rel="stylesheet" href="{{ asset('css/user/newQuizz.css') }}">#}
+{% endblock %}
+
+{% block body %}
+<main>
+    {{ parent() }}
+    <div class="container mb-5 mt-5">
+        <div class="card bg-dark text-white">
+            <h2 class="card-header">HRP</h2>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="hrpAge" class="mb-2">Age</label>
+                    <input type="number" class="form-control" id="hrpAge" min="1" step="1">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="hrpExperience" class="mb-2">Expérience (heures)</label>
+                    <input type="number" class="form-control" id="hrpExperience" placeholder="Nombre d'heures" min="0" step="1">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="hrpProvenance" class="mb-2">Provenance</label>
+                    <input type="text" class="form-control" id="hrpProvenance" placeholder="Site / Bouche à oreille / Autre">
+                </div>
+            </div>
+        </div>
+        <div class="card bg-dark text-white mt-2">
+            <h2 class="card-header">RolePlay</h2>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="names" class="mb-2">Nom et Prénom</label>
+                    <input type="text" class="form-control" id="names">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="sexe" class="mb-2">Sexe</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sexeRadios" id="men" checked>
+                        <label class="form-check-label" for="men">
+                            Homme
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sexeRadios" id="women">
+                        <label class="form-check-label" for="women">
+                            Femme
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group mt-2">
+                    <label for="age" class="mb-2">Age</label>
+                    <input type="number" class="form-control" id="age" min="1" step="1">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="background" class="mb-2">Background</label>
+                    <textarea class="form-control" id="background" rows="5"></textarea>
+                </div>
+                <div class="form-group mt-2">
+                    <label for="side" class="mb-2">De quel côté sera tu ?</label>
+                    <input type="text" class="form-control" id="side" placeholder="Légal / Illegal / Autre (précisez)">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="job" class="mb-2">Quel métier ou groupe souhaité ?</label>
+                    <input type="text" class="form-control" id="job"  placeholder="LSPD / Bloods / etc...">
+                </div>
+            </div>
+        </div>
+        <button id="validFolder" class="btn btn-success mt-3 pb-1 w-100" type="button">Envoyer le dossier</button>
+    </div>
+</main>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/newFolder.js') }}"></script>
+{% endblock %}

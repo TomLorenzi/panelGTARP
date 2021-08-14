@@ -1,0 +1,53 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Accueil | SinCity{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/user/homepage.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css">
+{% endblock %}
+
+{% block body %}
+<main>
+    {{ parent() }}
+    <div id="stepper" class="bs-stepper vertical ps-5 ms-5 mt-5">
+        <div class="bs-stepper-header">
+            <div class="step" data-target="#content-1">
+            <button type="button" class="btn step-trigger">
+                <span class="bs-stepper-circle">1</span>
+                <span class="bs-stepper-label">Valider le questionnaire</span>
+            </button>
+            </div>
+            <div class="line"></div>
+            <div class="step" data-target="#content-2">
+            <button type="button" class="btn step-trigger">
+                <span class="bs-stepper-circle">2</span>
+                <span class="bs-stepper-label">Créer son personnage</span>
+            </button>
+            </div>
+            <div class="line"></div>
+            <div class="step" data-target="#content-3">
+            <button type="button" class="btn step-trigger">
+                <span class="bs-stepper-circle">3</span>
+                <span class="bs-stepper-label">Passer la douane à l'oral</span>
+            </button>
+            </div>
+        </div>
+        <div class="bs-stepper-content">
+            <div id="content-1" class="content fade">
+            </div>
+            <div id="content-2" class="content">
+            </div>
+            <div id="content-3" class="content">
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/homepage.js') }}"></script>
+{% endblock %}

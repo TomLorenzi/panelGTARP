@@ -1,0 +1,76 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Edition du dossier #{{ folder.id }} | SinCity{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+<main>
+    {{ parent() }}
+    <div class="container mt-5 text-white">
+        <h1>Dossier N°{{ folder.id }}</h1>
+        <small>Envoyé le {{ folder.inserted|format_datetime('short', 'short', locale='fr') }}</small>
+        <div class="card bg-dark text-white">
+            <h2 class="card-header">HRP</h2>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="hrpAge" class="mb-2">Age</label>
+                    <input type="number" class="form-control" id="hrpAge" disabled value="{{ folder.hrpAge }}">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="hrpExperience" class="mb-2">Expérience (heures)</label>
+                    <input type="number" class="form-control" id="hrpExperience" disabled value="{{ folder.hrpExperience }}">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="hrpProvenance" class="mb-2">Provenance</label>
+                    <input type="text" class="form-control" id="hrpProvenance" disabled value="{{ folder.hrpProvenance|default('') }}">
+                </div>
+            </div>
+        </div>
+        <div class="card bg-dark text-white mt-2">
+            <h2 class="card-header">RolePlay</h2>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="names" class="mb-2">Nom et Prénom</label>
+                    <input type="text" class="form-control" id="names" disabled value="{{ folder.names }}">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="sexe" class="mb-2">Sexe</label>
+                    {% set sexe = (folder.sexe is same as 1) ? 'Homme' : 'Femme' %}
+                    <input type="text" class="form-control" id="sexe" disabled value="{{ sexe }}">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="age" class="mb-2">Age</label>
+                    <input type="number" class="form-control" id="age" disabled value="{{ folder.age }}">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="background" class="mb-2">Background</label>
+                    <textarea class="form-control" id="background" rows="5" disabled>{{ folder.background }}</textarea>
+                </div>
+                <div class="form-group mt-2">
+                    <label for="side" class="mb-2">De quel côté sera tu ?</label>
+                    <input type="text" class="form-control" id="side" disabled value="{{ folder.side }}">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="job" class="mb-2">Quel métier ou groupe souhaité ?</label>
+                    <input type="text" class="form-control" id="job" disabled value="{{ folder.job }}">
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-6">
+                <button id="refuseFolder" class="btn btn-danger mt-3 w-100" type="button">Refuser le dossier</button>
+            </div>
+            <div class="col-6">
+                <button id="validFolder" class="btn btn-success mt-3 w-100" type="button">Accepter le dossier</button>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
