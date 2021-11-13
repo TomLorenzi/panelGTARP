@@ -21,6 +21,7 @@ class DiscordUserProvider implements UserProviderInterface
 
     private const DISCORD_USER_DATA_ENDPOINT = 'https://discordapp.com/api/users/@me';
 
+    //TODO: Move to .env
     private const SINCITY_DISCORD_ID = '715458706929614909';
 
     private HttpClientInterface $httpClient;
